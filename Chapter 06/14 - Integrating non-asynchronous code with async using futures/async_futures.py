@@ -6,8 +6,8 @@ asyncio 기반 애플리케이션에서 비동기가 아닌 라이브러리를
 """
 import asyncio
 import time
-
 import requests
+
 
 SYMBOLS = ("USD", "EUR", "PLN", "NOK", "CZK")
 BASES = ("USD", "EUR", "PLN", "NOK", "CZK")

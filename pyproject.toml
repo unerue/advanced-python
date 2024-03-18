@@ -10,6 +10,8 @@ python = "^3.10"
 flask = "^3.0.2"
 fastapi = "^0.110.0"
 uvicorn = "^0.28.0"
+wait-for-it = "^2.2.2"
+watchdog = {extras = ["watchmedo"], version = "^4.0.0"}
 
 
 [build-system]
