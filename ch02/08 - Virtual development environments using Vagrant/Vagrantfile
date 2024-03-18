@@ -1,0 +1,21 @@
+Vagrant.configure("2") do |config|
+  # 모든 Vagrnat 개발 환경에는 하나의 box가 필요하다.
+  # at https://vagrantcloud.com/search에서 box를 검색할 수 있다.
+  # 여기에서는 Ubuntu 64bit용 Bionic 버전을 이용한다.
+  config.vm.box = "ubuntu/trusty64"
+
+  # 포워딩 포트를 만들고, 호스트 머신의 특정 포트로부터의 접근만 허용한다.
+  # 외부로부터의 접근은 막기 위해 127.0.0.1을 통합 접근만 허용한다.
+  config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.gui = false
+    # VM의 메모리 용량 커스터마이즈:
+    vb.memory = "1024"
+  end
+
+  # 쉘 스크립트를 통한 프로비저닝을 활성화한다.
+  config.vm.provision "shell", inline: <<-SHELL
+    apt-get update
+  SHELL
+end

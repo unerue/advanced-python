@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  echo-server:
+    # Docker Compose에서 로컬 (.) 디렉터리로부터
+    # 이미지를 빌드하도록 명령한다.
+    build: .
+
+    # 다음은 "docker build" 명령어에
+    # "-p" 옵션을 이용한 것과 동일하다.
+    ports:
+    - "5000:5000"
+
+    # 다음은 "docker build" 명령어에
+    # "-t" 옵션을 이용한 것과 동일하다.
+    tty: true
+
+  database:
+    image: postgres
+
+  cache:
+    image: redis
