@@ -14,4 +14,4 @@ services:
     environment:
       - DATABASE_HOSTNAME=database
       - DATABASE_PORT=5432
-      - ECHO_SERVER_ADDRESS=http://echo-server:80
+      - ECHO_SERVER_ADDRESS=http://echo-server:8000

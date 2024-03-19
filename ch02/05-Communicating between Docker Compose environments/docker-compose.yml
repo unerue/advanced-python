@@ -9,7 +9,7 @@ services:
   echo-server:
     build: .
     ports:
-    - "5000:5000"
+    - "8000:8000"
     tty: true
     environment:
       - DATABASE_HOSTNAME=database
